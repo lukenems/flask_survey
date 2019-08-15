@@ -46,8 +46,7 @@ def log_answer_and_redirect():
 
     ans = request.form.get('answer')
     responses.append(ans)
-    # print(satisfaction_survey.questions)
-    # print("RESPONSES: ", responses)
+    print("RESPONSES: ", responses)
     if len(responses) == len(satisfaction_survey.questions):
       return redirect("/thank_you")
 
@@ -56,4 +55,5 @@ def log_answer_and_redirect():
 
 @app.route('/thank_you')
 def thank_you_page():
+  responses.clear()
   return render_template('/thank_you.html')
