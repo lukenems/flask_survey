@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block question_form %}
-
+    {% for msg in get_flashed_messages() %}
+        <p>{{ msg }}</p>
+    {% endfor %}
     <form action="/answer" name="answer" method="POST">
         <p>{{ question }}</p>
         {% for choice in choices %}

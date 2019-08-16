@@ -5,6 +5,8 @@
 <h1>{{ title }}</h1>
 <p>{{ instructions }}</p>
 
-<a href="/questions/0"><button>Start Survey</button></a>
+<form action="/session" method="POST">
+  <button type="submit">Start Survey</button>
+</form>
 
 {% endblock %}
